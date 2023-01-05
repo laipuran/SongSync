@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SongSync.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            VerticalOptions="Start"
+            HorizontalOptions="Start"
+            Margin="10,10,0,0">
+            <Button
+                x:Name="GetButton"
+                Text="获取目录结构"
+                WidthRequest="120"
+                Clicked="GetButton_Clicked"/>
+            <Label
+                Text="Result Text Block"
+                x:Name="Result"/>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
