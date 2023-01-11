@@ -54,6 +54,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="DownloadPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Resources\Styles\Strings.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -61,6 +64,12 @@
 
 	<ItemGroup>
 	  <Folder Include="Pages\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="DownloadPage.xaml.cs">
+	    <DependentUpon>DownloadPage.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 </Project>

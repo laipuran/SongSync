@@ -2,27 +2,26 @@
 
 public partial class MainPage : ContentPage
 {
-	public MainPage()
+    private List<string> filePaths = new();
+    public MainPage()
 	{
 		InitializeComponent();
+        
 	}
 
     private async void GetButton_Clicked(object sender, EventArgs e)
     {
+        filePaths = new();
         PermissionStatus status = await Permissions.RequestAsync<Permissions.StorageWrite>();
         if (status != PermissionStatus.Granted)
         {
-            Result.Text = "Permissiont DENIED!";
+            Result.Text = "Permission DENIED!";
             return;
         }
-        List<string> filePaths = new();
 #if WINDOWS
         filePaths = await GetFileNames();
-#elif ANDROID
-        string downloadPath = Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryDownloads).AbsolutePath;
-        filePaths = await GetFileNames(downloadPath);
 #endif
-        Result.Text = string.Join(", ", filePaths);
+        Result.Text = string.Join("\n", filePaths);
     }
     static readonly string[] ends = { ".wav", ".wma", ".mp3", ".flac", ".aac", ".m4a" };
     public static async Task<string> FilePicker()
