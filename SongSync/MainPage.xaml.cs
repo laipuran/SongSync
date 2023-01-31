@@ -4,10 +4,10 @@ public partial class MainPage : ContentPage
 {
     private List<string> filePaths = new();
     public MainPage()
-	{
-		InitializeComponent();
-        
-	}
+    {
+        InitializeComponent();
+
+    }
 
     private async void GetButton_Clicked(object sender, EventArgs e)
     {

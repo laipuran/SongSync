@@ -3,7 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SongSync.DownloadPage"
              Title="Download">
-    <VerticalStackLayout
+    <ScrollView>
+        <VerticalStackLayout
         HorizontalOptions="Start">
-    </VerticalStackLayout>
+            <Entry
+            Placeholder="Download link"
+            x:Name="LinkEntry"/>
+            <Button
+            Text="Download"
+            x:Name="DownloadButton"
+            Clicked="DownloadButton_Clicked"/>
+            <Label
+                Text=""
+                x:Name="Result"
+                Margin="0,20,0,0"/>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
